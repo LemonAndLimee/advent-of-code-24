@@ -1,6 +1,5 @@
 import re
-
-INPUT_FILE = "day3_input.txt"           
+import utils          
 
 input_string = ""
 
@@ -41,7 +40,7 @@ def get_mult_total_with_toggles(strings:list) -> int:
     
     return total
 
-with open(INPUT_FILE, 'r') as input_file:
+with open(utils.get_input_filepath(day=3), 'r') as input_file:
     for line in input_file:
         line_items = line.split()
         for item in line_items:

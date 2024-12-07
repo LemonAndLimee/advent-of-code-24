@@ -1,3 +1,6 @@
+def get_input_filepath(day:int) -> str:
+    return f"inputs/day{day}_input.txt"
+
 def read_file_to_list_of_lines(filepath:str) -> list:
     with open(filepath, 'r') as input_file:
         lines = []

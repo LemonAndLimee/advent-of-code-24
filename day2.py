@@ -1,4 +1,4 @@
-INPUT_FILE = "day2_input.txt"
+import utils
 
 reports = []
 
@@ -44,7 +44,7 @@ def is_report_safe_part2(report:list) -> bool:
         return False
             
 
-with open(INPUT_FILE, 'r') as input_file:
+with open(utils.get_input_filepath(day=2), 'r') as input_file:
     for line in input_file:
         line_items = line.split()
         levels = []

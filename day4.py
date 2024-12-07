@@ -1,6 +1,6 @@
 import utils
 
-grid = utils.read_file_to_2d_list_of_chars("day4_input.txt")
+grid = utils.read_file_to_2d_list_of_chars(utils.get_input_filepath(day=4))
 direction_vectors = [
     [-1,-1],
     [-1,0],
