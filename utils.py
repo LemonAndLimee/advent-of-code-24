@@ -20,3 +20,13 @@ def read_file_to_2d_list_of_chars(filepath:str) -> list:
             grid.append(row)
     
     return grid
+
+def get_middle_element(list:list) -> int:
+    middle_index = int((len(list)-1) / 2)
+    return list[middle_index]
+
+def has_any_items_in_common(list1:list, list2:list) -> bool:
+    for item in list1:
+        if item in list2:
+            return True
+    return False
