@@ -5,7 +5,10 @@ def read_file_to_list_of_lines(filepath:str) -> list:
     with open(filepath, 'r') as input_file:
         lines = []
         for line in input_file:
-            lines.append(line[:-1])
+            if line[-1] == "\n":
+                lines.append(line[:-1])
+            else:
+                lines.append(line)
     
     return lines
 
