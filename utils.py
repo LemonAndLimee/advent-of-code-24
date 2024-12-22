@@ -30,3 +30,16 @@ def has_any_items_in_common(list1:list, list2:list) -> bool:
         if item in list2:
             return True
     return False
+
+def write_lines_to_file(filepath:str, lines:list):
+    with open(filepath, 'w') as output_file:
+        for line in lines:
+            output_file.write(line + "\n")
+
+def copy_2d_list(src_list:list) -> list:
+    result = []
+    for row in src_list:
+        new_row = row.copy()
+        result.append(new_row)
+    return result
+        
