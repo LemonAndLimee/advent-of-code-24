@@ -24,6 +24,11 @@ def read_file_to_2d_list_of_chars(filepath:str) -> list:
     
     return grid
 
+def read_single_line_file_to_string(filepath:str) -> str:
+    with open(filepath, 'r') as input_file:
+        string = input_file.readline()
+    return string
+
 def get_middle_element(list:list) -> int:
     middle_index = int((len(list)-1) / 2)
     return list[middle_index]
