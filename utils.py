@@ -48,6 +48,18 @@ def read_single_line_file_to_string(filepath:str) -> str:
         string = input_file.readline()
     return string
 
+def read_single_line_file_to_list_of_words(filepath:str) -> list[str]:
+    line = read_single_line_file_to_string(filepath)
+    words = line.split()
+    return words
+
+def read_single_line_file_to_list_of_ints(filepath:str) -> list[int]:
+    words = read_single_line_file_to_list_of_words(filepath)
+    ints = []
+    for word in words:
+        ints.append(int(word))
+    return ints
+
 def get_middle_element(list:list) -> int:
     middle_index = int((len(list)-1) / 2)
     return list[middle_index]
@@ -105,3 +117,19 @@ def is_position_within_grid(position:tuple, grid:list) -> bool:
 
 def get_grid_value_at_position(position:tuple, grid:list):
     return grid[position[0]][position[1]]
+
+def multiply_string_number(num:str, operand:int) -> str:
+    '''Multiplies a number stored as a string, returning a string.'''
+    num_int = int(num)
+    result_int = num_int*operand
+    return str(result_int)
+
+def split_string_in_half(string:str) -> tuple[str]:
+    if len(string) % 2 != 0:
+        raise ValueError("String length must be even")
+    
+    midpoint = len(string) // 2
+    string1 = string[:midpoint]
+    string2 = string[midpoint:]
+
+    return (string1, string2)
