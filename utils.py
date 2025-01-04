@@ -1,3 +1,10 @@
+CARDINAL_DIRECTIONS = [
+    (1, 0),
+    (-1, 0),
+    (0, 1),
+    (0, -1)
+]
+
 def get_input_filepath(day:int) -> str:
     return f"inputs/day{day}_input.txt"
 
@@ -20,6 +27,18 @@ def read_file_to_2d_list_of_chars(filepath:str) -> list:
             for char in line:
                 if char != '\n':
                     row.append(char)
+            grid.append(row)
+    
+    return grid
+
+def read_file_to_2d_list_of_ints(filepath:str) -> list:
+    with open(filepath, 'r') as input_file:
+        grid = []
+        for line in input_file:
+            row = []
+            for char in line:
+                if char != '\n':
+                    row.append(int(char))
             grid.append(row)
     
     return grid
@@ -70,7 +89,7 @@ def apply_vector_to_position_2d(position:tuple, vector:tuple) -> tuple:
 def get_numeric_inverse_of_tuple_2d(t:tuple) -> tuple:
     return (-t[0], -t[1])
 
-def is_position_within_grid_bounds(position:tuple, grid_dimensions:tuple) -> bool:
+def is_position_within_grid_dimensions(position:tuple, grid_dimensions:tuple) -> bool:
     height = grid_dimensions[0]
     width = grid_dimensions[1]
     
@@ -79,3 +98,10 @@ def is_position_within_grid_bounds(position:tuple, grid_dimensions:tuple) -> boo
     if position[1] < 0 or position[1] >= width:
         return False
     return True
+
+def is_position_within_grid(position:tuple, grid:list) -> bool:
+    grid_dimensions = (len(grid), len(grid[0]))
+    return is_position_within_grid_dimensions(position, grid_dimensions)
+
+def get_grid_value_at_position(position:tuple, grid:list):
+    return grid[position[0]][position[1]]

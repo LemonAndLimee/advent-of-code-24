@@ -21,7 +21,7 @@ def generate_positions_in_one_direction(start_pos:tuple, vector:tuple, unlimited
     while continue_loop:
         continue_loop = unlimited_positions
         new_pos = apply_vector_to_position_2d(position=current_pos, vector=vector)
-        if is_position_within_grid_bounds(new_pos, grid_dimensions):
+        if is_position_within_grid_dimensions(new_pos, grid_dimensions):
             positions.append(new_pos)
         else:
             continue_loop = False
