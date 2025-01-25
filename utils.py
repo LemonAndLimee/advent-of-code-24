@@ -133,3 +133,17 @@ def split_string_in_half(string:str) -> tuple[str]:
     string2 = string[midpoint:]
 
     return (string1, string2)
+
+def get_list_of_grid_positions(grid:list) -> list[tuple]:
+    positions = []
+
+    for r in range(len(grid)):
+        for c in range(len(grid[r])):
+            pos = (r, c)
+            positions.append(pos)
+    
+    return positions
+
+def remove_list_from_other_list(list_to_remove:list, list_to_remove_from:list):
+    for item in list_to_remove:
+        list_to_remove_from.remove(item)
